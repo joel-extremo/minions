@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Quicksand', sans-serif; 
+}
+
+/*** modals ***/
+.modal{
+  display: none;
+}
+
+.modal-content .result{
+  margin-top: 160px;
+  width: 100%;
+  padding: 0 25%;
+}
+
+.modal-content .result [class*="col-"]{
+  text-align: center;
+}
+
+.modal-content .result h3{
+  padding-top: 30px;
+}
+
+.modal-content .minion{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 61%;
+}
+
+.modal-content .message{
+  text-align: center;
+}
+
+.modal-content h1{
+    
+    margin-top: 8%;
+    font-size: 5em;
+}
