@@ -3,87 +3,60 @@
 
 <div id="options-container">
   <div class="row">
-    <div class="col-sm">
-      <%= image_tag("rock.png", class: "img-responsive logo") %>
+    <div class="col-sm game-option" data-option="rock">
+      <%= image_tag("rock.png", class: "img-responsive") %>
     </div>
-    <div class="col-sm">
-      <%= image_tag("paper.png", class: "img-responsive logo") %>
+    <div class="col-sm game-option" data-option="paper">
+      <%= image_tag("paper.png", class: "img-responsive") %>
     </div>
-    <div class="col-sm">
-      <%= image_tag("scissor.png", class: "img-responsive logo") %>
+    <div class="col-sm game-option" data-option="scissor">
+      <%= image_tag("scissor.png", class: "img-responsive") %>
     </div>
   </div>
 </div>
 
-<div class="container">
+<!-- modals -->
 
-  <div class="card">
-      <h1>Circular Modal Example</h1>
-      <hr />
-      <p>
-          Use the buttons below to open an animated modal window
-          that each load it's inner contents from different places
-          using different techniques.
-      </p>
-      <hr />
-
-      <button
-          class="btn"
-          data-modal="static"
-          data-content="<h2>Static Content</h2><p>This modal content came from the button attribute.</p>">
-          Static
-      </button> &nbsp;
-
-      <button
-          class="btn"
-          data-modal="element"
-          data-content="#element-modal-content">
-          Element
-      </button> &nbsp;
-
-      <button
-          class="btn"
-          data-modal="ajax"
-          data-content="https://raw.githubusercontent.com/rainner/syntaxy-js/master/dist/syntax/python.txt">
-          Remote
-      </button> &nbsp;
-
-  </div>
-
+<div id="modal-triggers">
+  <input class="welcome" type="hidden" data-modal="element" data-content="#welcome-modal">
+  <input class="lose" type="hidden" data-modal="element" data-content="#lose-modal">
+  <input class="win" type="hidden" data-modal="element" data-content="#win-modal">
 </div>
 
-<div id="element-modal-content" style="display: none;">
-  <h2>Element Content</h2>
-  <p>This modal content came from another hidden element on the page.</p>
-  <%= image_tag("minions/hi.jpg", class: "img-responsive logo") %>
-  <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+<div id="welcome-modal" class="modal">
+  <h1>Hi, do you want to play with me?</h1>
+  <%= image_tag("minions/hi.jpg", class: "img-responsive") %>
+</div>
+
+<div id="win-modal" class="modal">
+  <h1>You Win!</h1>
+  <%= image_tag("minions/win.png", class: "img-responsive") %>
+</div>
+
+<div id="lose-modal" class="modal">
+  <div class="result">
+    <div class="row">
+      <div class="col-sm">
+        <h3>You</h3>
+      </div>
+      <div class="col-sm">
+        <%= image_tag("rock.png", class: "img-responsive") %>
+      </div>
+      <div class="col-sm">
+        <%= image_tag("rock.png", class: "img-responsive") %>
+      </div>
+      <div class="col-sm">
+        <h3>Minions</h3>
+      </div>
+    </div>
+  </div>
+  <div class="message">
+    <h1>You lose!</h1>
+    <h2>continue?</h2>
+    <button class="continue-game">YES</button>
+    <button class="end-game">NO</button>
+  </div>
+  <%= image_tag("minions/lose.png", class: "minion img-responsive") %>
 </div>
 
 
