@@ -14,3 +14,27 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+    $('.game-option').click(function(){
+		let result = getResult($(this).data('option'))
+
+		let stringResult = result ? 'win' : 'lose'
+		
+
+		$(`#modal-triggers .${stringResult}`).trigger('click')
+	})
+
+	function  getResult(option)
+	{
+		return false;
+		//ajax request
+		
+		a = Math.floor(Math.random() * 10) + 1 ;
+		if(a<=5)
+			return true
+
+		return false
+	}
+	$(`#modal-triggers .lose`).trigger('click')
+});
