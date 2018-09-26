@@ -16,25 +16,50 @@
 //= require_tree .
 
 $( document ).ready(function() {
-    $('.game-option').click(function(){
-		let result = getResult($(this).data('option'))
 
-		let stringResult = result ? 'win' : 'lose'
-		
+  //when the user select paper, rock or scissor
+  $('.game-option').click(function(){
 
-		$(`#modal-triggers .${stringResult}`).trigger('click')
-	})
+    let userOption = $(this).data('option')
 
-	function  getResult(option)
-	{
-		return false;
-		//ajax request
-		
-		a = Math.floor(Math.random() * 10) + 1 ;
-		if(a<=5)
-			return true
+    $.ajax({
+      url: "/minions/result",
+      data: { userOption }
+    })
+    .done(function( response ) {
 
-		return false
-	}
-	$(`#modal-triggers .lose`).trigger('click')
+      console.log(response)
+
+      result = response.result ? 'win' : 'lose'
+
+      html = getResultHTML(response.user, response.minions)
+
+      $('#' + result + '-modal .result').html(html)
+    
+      $(`#modal-triggers .${result}`).trigger('click')
+    });  
+  })
+
+  //html for the result modal
+  function getResultHTML(userOption, minionsOption)
+  {
+    return `
+      <div class="row">
+        <div class="col-sm">
+          <h3>You</h3>
+        </div>
+        <div class="col-sm">
+          <img src="images/${userOption}.png">
+        </div>
+        <div class="col-sm">
+          <img src="images/${minionsOption}.png">
+        </div>
+        <div class="col-sm">
+          <h3>Minions</h3>
+        </div>
+      </div>
+    `
+  }
+
+  // $('#modal-triggers .lose').trigger('click')
 });
