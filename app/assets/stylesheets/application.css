@@ -18,6 +18,10 @@ body {
   font-family: 'Quicksand', sans-serif; 
 }
 
+.logo{
+  width: 90px;
+}
+
 /*** modals ***/
 .modal{
   display: none;
