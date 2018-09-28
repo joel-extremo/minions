@@ -17,6 +17,12 @@
 
 $( document ).ready(function() {
 
+  var modalTitles = {
+    lose : 'YOU LOSE!',
+    win : 'YOU WIN!',
+    tie : 'TIE!'
+  }
+
   //when the user select paper, rock or scissor
   $('.game-option').click(function(){
 
@@ -30,36 +36,32 @@ $( document ).ready(function() {
 
       console.log(response)
 
-      result = response.result ? 'win' : 'lose'
-
-      html = getResultHTML(response.user, response.minions)
-
-      $('#' + result + '-modal .result').html(html)
+      loadModalData(response)
     
-      $(`#modal-triggers .${result}`).trigger('click')
+      $(`#modal-triggers .result`).trigger('click')
     });  
   })
 
-  //html for the result modal
-  function getResultHTML(userOption, minionsOption)
+  $('#modal-dismiss').on('click', function(){
+    console.log('f')
+    window[ 'Modal' ].onDismiss
+  })
+
+  //insert the html in the modal by the result of the game
+  function loadModalData(response)
   {
-    return `
-      <div class="row">
-        <div class="col-sm">
-          <h3>You</h3>
-        </div>
-        <div class="col-sm">
-          <img src="images/${userOption}.png">
-        </div>
-        <div class="col-sm">
-          <img src="images/${minionsOption}.png">
-        </div>
-        <div class="col-sm">
-          <h3>Minions</h3>
-        </div>
-      </div>
-    `
+    title = modalTitles[response.result]
+
+    $('#result-modal .minion').attr('src','images/minions/'+response.result+'.png')
+
+    $('#result-modal h1').text(title)
+
+    $('#result-modal .user-option').attr('src','images/'+response.user+'.png')
+
+    $('#result-modal .minions-option').attr('src','images/'+response.minions+'.png')
   }
 
-  // $('#modal-triggers .lose').trigger('click')
+  loadModalData({user: "paper", minions: "rock", result: 'win'})
+
+  $('#modal-triggers .result').trigger('click')
 });
