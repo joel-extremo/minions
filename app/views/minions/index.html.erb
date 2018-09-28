@@ -19,8 +19,7 @@
 
 <div id="modal-triggers">
   <input class="welcome" type="hidden" data-modal="element" data-content="#welcome-modal">
-  <input class="lose" type="hidden" data-modal="element" data-content="#lose-modal">
-  <input class="win" type="hidden" data-modal="element" data-content="#win-modal">
+  <input class="result" type="hidden" data-modal="element" data-content="#result-modal">
 </div>
 
 <div id="welcome-modal" class="modal">
@@ -28,23 +27,34 @@
   <%= image_tag("minions/hi.jpg", class: "img-responsive") %>
 </div>
 
-<div id="win-modal" class="modal">
-  <h1>You Win!</h1>
-  <%= image_tag("minions/win.png", class: "img-responsive") %>
-</div>
-
-<div id="lose-modal" class="modal">
+<div id="result-modal" class="modal">
   <div class="result">
-    <!-- load by JS -->
+    <div class="row">
+        <div class="col-sm">
+          <h3>You</h3>
+        </div>
+        <div class="col-sm">
+          <img class="user-option" src="">
+        </div>
+        <div class="col-sm">
+          <img  class="minions-option" src="">
+        </div>
+        <div class="col-sm">
+          <h3>Minions</h3>
+        </div>
+      </div>
   </div>
   <div class="message">
-    <h1>You lose!</h1>
+    <h1><!-- load by JS --></h1>
     <h2>continue?</h2>
-    <button class="continue-game">YES</button>
-    <button class="end-game">NO</button>
+    <!-- <div class="buttons">
+      <button class="continue-game">YES</button>
+      <button class="end-game">NO</button>
+    </div> -->
   </div>
-  <%= image_tag("minions/lose.png", class: "minion img-responsive") %>
+  <img class="minion img-responsive" src="">
 </div>
+
 
 
 

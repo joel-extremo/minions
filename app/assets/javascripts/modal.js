@@ -139,17 +139,23 @@
             this._buttons.className = "modal-buttons";
             this._wrap.appendChild( this._buttons );
 
-            if( this._options.onConfirm )
-            {
-                this._confirm = document.createElement( "button" );
-                this._confirm.className = "modal-confirm";
-                this._confirm.innerHTML = this._options.confirmText;
-                this._confirm.addEventListener( "click", this.onConfirm );
-                this._buttons.appendChild( this._confirm );
-            }
+            // if( this._options.onConfirm )
+            // {
+            //     this._confirm = document.createElement( "button" );
+            //     this._confirm.className = "modal-confirm";
+            //     this._confirm.innerHTML = this._options.confirmText;
+            //     this._confirm.addEventListener( "click", this.onConfirm );
+            //     this._buttons.appendChild( this._confirm );
+            // }
             this._dismiss = document.createElement( "button" );
-            this._dismiss.className = "modal-dismiss";
-            this._dismiss.innerHTML = this._options.dismissText;
+            this._dismiss.className = "continue-game";
+            this._dismiss.innerHTML = 'YES';
+            this._dismiss.addEventListener( "click", this.onDismiss );
+            this._buttons.appendChild( this._dismiss );
+
+            this._dismiss = document.createElement( "button" );
+            this._dismiss.className = "end-game";
+            this._dismiss.innerHTML = 'NO';
             this._dismiss.addEventListener( "click", this.onDismiss );
             this._buttons.appendChild( this._dismiss );
         },
