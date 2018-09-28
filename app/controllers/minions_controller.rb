@@ -22,13 +22,13 @@ class MinionsController < ApplicationController
 
   def user_win?(userOption, minionsOption)
     return case
-      when userOption == 'rock' && minionsOption == 'scissor' then true
-      when userOption == 'rock' && minionsOption == 'paper' then false
-      when userOption == 'paper' && minionsOption == 'rock' then true
-      when userOption == 'paper' && minionsOption == 'scissor' then false
-      when userOption == 'scissor' && minionsOption == 'paper' then true
-      when userOption == 'scissor' && minionsOption == 'rock' then false
-      when userOption == minionsOption then nil
+      when userOption == 'rock' && minionsOption == 'scissor' then 'win'
+      when userOption == 'rock' && minionsOption == 'paper' then 'lose'
+      when userOption == 'paper' && minionsOption == 'rock' then 'win'
+      when userOption == 'paper' && minionsOption == 'scissor' then 'lose'
+      when userOption == 'scissor' && minionsOption == 'paper' then 'win'
+      when userOption == 'scissor' && minionsOption == 'rock' then 'lose'
+      when userOption == minionsOption then 'tie'
       end 
   end
 end
