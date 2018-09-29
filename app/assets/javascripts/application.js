@@ -26,7 +26,7 @@ $( document ).ready(function() {
   var loseCounter = 0
 
   //when the user select paper, rock or scissor
-  $('.game-option').click(function(){
+  $(document).on('click', '.game-option', function() {
 
     let userOption = $(this).data('option')
 
@@ -35,7 +35,6 @@ $( document ).ready(function() {
       data: { userOption }
     })
     .done(function( response ) {
-
       loadModalData(response)
     
       $(`#modal-triggers .result`).trigger('click')//open modal
@@ -92,4 +91,6 @@ $( document ).ready(function() {
     $('#result-modal .user-option').removeClass('winner')
     $('#result-modal .minions-option').removeClass('winner')
   }
+
+  $(`#modal-triggers .welcome`).trigger('click')
 });
