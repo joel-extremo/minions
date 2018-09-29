@@ -1,11 +1,11 @@
 class MinionsController < ApplicationController
   def index
-    name = 'joel'
+    
   end
 
   def get_result
     userOption = params[:userOption]
-    minionsOption = getMinionsOption()
+    minionsOption = get_minions_option()
 
     result = user_win?(userOption, minionsOption)
 
@@ -16,7 +16,7 @@ class MinionsController < ApplicationController
     }
   end
 
-  def getMinionsOption
+  def get_minions_option
     return ['rock', 'paper', 'scissor'].sample
   end
 
