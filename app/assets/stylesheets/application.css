@@ -24,8 +24,51 @@ body {
 
 /*** navbar ***/
 
+nav{
+  margin: 0 60px 150px 60px;
+}
+
+.navbar a{
+  color: black;
+}
+
+.navbar a:hover{
+  color: gray;
+  border-bottom: 1px solid gray;
+}
+
 .logo{
   width: 90px;
+}
+
+/*** game - options ***/
+
+#options-container{
+  margin-bottom: 150px;
+}
+
+#options-container [class*="col-"]{
+  padding: 40px;
+  background-color: #38c3ce;
+  margin: 0px 116px;
+  border-radius: 120px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+#options-container [class*="col-"]:hover{
+  padding: 40px;
+  background-color: #47c3b1;
+  margin: 0px 116px;
+  border-radius: 120px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/*** match - resume ***/
+
+#match-resume h3,
+#match-resume p{
+  width: 100%;
+  text-align: center;
 }
 
 /*** modal - result ***/
