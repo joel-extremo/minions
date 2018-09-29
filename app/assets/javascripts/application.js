@@ -42,15 +42,12 @@ $( document ).ready(function() {
     });  
   })
 
-  $('#modal-dismiss').on('click', function(){
-    console.log('f')
-    window[ 'Modal' ].onDismiss
-  })
-
   //insert the html in the modal by the result of the game
   function loadModalData(response)
   {
     title = modalTitles[response.result]
+    winner = getWinner(response.result) 
+    resetWinner()
 
     $('#result-modal .minion').attr('src','images/minions/'+response.result+'.png')
 
@@ -59,9 +56,27 @@ $( document ).ready(function() {
     $('#result-modal .user-option').attr('src','images/'+response.user+'.png')
 
     $('#result-modal .minions-option').attr('src','images/'+response.minions+'.png')
+
+    $('#result-modal .' + winner).addClass('winner')
   }
 
-  loadModalData({user: "paper", minions: "rock", result: 'win'})
+  function getWinner(result) 
+  {
+    switch (result) 
+    {
+      case 'win': return 'user-option'
+      case 'lose': return 'minions-option'
+      default: return ''
+    }
+  }
 
-  $('#modal-triggers .result').trigger('click')
+  function resetWinner() 
+  {
+    $('#result-modal .user-option').removeClass('winner')
+    $('#result-modal .minions-option').removeClass('winner')
+  }
+
+  // loadModalData({user: "paper", minions: "rock", result: 'lose'})
+
+  // $('#modal-triggers .result').trigger('click')
 });

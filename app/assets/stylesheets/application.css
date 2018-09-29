@@ -90,3 +90,8 @@ body {
 .modal-overlay.active .modal-buttons .end-game{
   background-color: #ff3d00;
 }
+
+.winner{
+  width: 150px;
+  margin-top: -25px
+}
