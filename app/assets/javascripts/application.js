@@ -22,7 +22,6 @@ $( document ).ready(function() {
     win : 'YOU WIN!',
     tie : 'TIE!'
   }
-  var gameHistory = []
   var winCounter = 0
   var loseCounter = 0
 
@@ -36,8 +35,6 @@ $( document ).ready(function() {
       data: { userOption }
     })
     .done(function( response ) {
-
-      gameHistory.push(response)
 
       loadModalData(response)
     
@@ -95,10 +92,4 @@ $( document ).ready(function() {
     $('#result-modal .user-option').removeClass('winner')
     $('#result-modal .minions-option').removeClass('winner')
   }
-
-  //development
-  // updateCounters('tie')
-  // loadModalData({user: "paper", minions: "rock", result: 'tie'})
-
-  // $('#modal-triggers .result').trigger('click')
 });
