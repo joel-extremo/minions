@@ -18,14 +18,17 @@ body {
   font-family: 'Quicksand', sans-serif; 
 }
 
+.game-option img{
+  width: 150px;
+}
+
+/*** navbar ***/
+
 .logo{
   width: 90px;
 }
 
-/*** modals ***/
-.modal{
-  display: none;
-}
+/*** modal - result ***/
 
 .modal-content .result{
   padding: 0 150px;
@@ -33,35 +36,48 @@ body {
   width: 100%;
 }
 
-.modal-content .result [class*="col-"]{
-  text-align: center;
-  margin: 0 30px;
-}
-
 .modal-content .result h3{
   padding-top: 20px;
   float: 
 }
 
+.modal-content .result [class*="col-"]{
+  text-align: center;
+  margin: 0 30px;
+}
+
+.result img{
+  width: 80px;
+}
+
+.result .winner{
+  width: 150px;
+  margin-top: -40px
+}
+
+/*** modal - message ***/
+
 .modal-content .message{
   text-align: center;
 }
 
-.modal-content h1{
+.modal-content .message h1{
     margin-bottom: 20px;
     margin-top: 8%;
     font-size: 5em;
 }
 
-.modal-content h2{
+.modal-content .message h2{
     margin-bottom: 55px;
 }
 
-.modal-content .minion{
+.modal-content .message .minion{
   position: absolute;
   bottom: 0;
   left: 0;
 }
+
+/*** modal - buttons ***/
 
 .modal-overlay.active .modal-buttons button{
   display: inline-block;
@@ -70,7 +86,6 @@ body {
   font-size: 40px;
   line-height: 16px;
   font-weight: normal;
-  margin: 0 0 0 10px;
   padding: 20px;
   background-color: #fff;
   color: white;
@@ -91,15 +106,5 @@ body {
   background-color: #ff3d00;
 }
 
-.result img{
-  width: 80px;
-}
 
-.result .winner{
-  width: 150px;
-  margin-top: -40px
-}
 
-.game-option img{
-  width: 150px;
-}
