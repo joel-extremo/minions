@@ -44,13 +44,13 @@ $( document ).ready(function() {
       $(`#modal-triggers .result`).trigger('click')//open modal
 
       setTimeout(function() {
-        updateCounters(response.result)
+        updateResultCounters(response.result)
       }, 2000);
     });  
   })
 
-  //update result labels
-  function updateCounters(result)
+  //update result counter labels in the html 
+  function updateResultCounters(result)
   {
     if(result == 'win')
       winCounter++
@@ -65,18 +65,17 @@ $( document ).ready(function() {
   function loadModalData(response)
   {
     title = modalTitles[response.result]
-    winner = getWinner(response.result) 
     resetWinner()
 
-    $('#result-modal .minion').attr('src','images/minions/'+response.result+'.png')
-
     $('#result-modal h1').text(title)
+
+    $('#result-modal .minion').attr('src','images/minions/'+response.result+'.png')
 
     $('#result-modal .user-option').attr('src','images/'+response.user+'.svg')
 
     $('#result-modal .minions-option').attr('src','images/'+response.minions+'.svg')
 
-    $(winner).addClass('winner')
+    $(getWinner(response.result)).addClass('winner')
   }
 
   //return the selector of the winner in the modal
