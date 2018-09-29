@@ -274,7 +274,7 @@
 
         redirect: function( e )
         {
-            window.location.href = "https://www.google.com.do";
+            window.location.href = "https://www.pelispedia.tv/pelicula/los-minions/";
         },
 
     };
