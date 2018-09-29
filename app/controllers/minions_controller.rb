@@ -31,4 +31,8 @@ class MinionsController < ApplicationController
       when userOption == minionsOption then 'tie'
     end 
   end
+
+  def about
+    
+  end
 end

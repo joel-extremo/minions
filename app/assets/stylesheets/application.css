@@ -25,7 +25,7 @@ body {
 /*** navbar ***/
 
 nav{
-  margin: 0 60px 150px 60px;
+  margin: 0 60px;
 }
 
 .logo{
@@ -44,7 +44,7 @@ nav{
 /*** game - options ***/
 
 #options-container{
-  margin-bottom: 150px;
+  margin: 150px 0;
 }
 
 #options-container .circle{
@@ -157,6 +157,15 @@ nav{
 
 .modal-overlay.active .modal-buttons .end-game:hover{
   background-color: #cc3100;
+}
+
+.about-img{
+  height: 600px;
+}
+
+.modal-content .welcome-container h1{
+  text-align: center;
+  margin-top: 25%;
 }
 
 
