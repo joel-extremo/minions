@@ -28,6 +28,10 @@ nav{
   margin: 0 60px 150px 60px;
 }
 
+.logo{
+  width: 90px;
+}
+
 .navbar a{
   color: black;
 }
@@ -37,25 +41,22 @@ nav{
   border-bottom: 1px solid gray;
 }
 
-.logo{
-  width: 90px;
-}
-
 /*** game - options ***/
 
 #options-container{
   margin-bottom: 150px;
 }
 
-#options-container [class*="col-"]{
-  padding: 40px;
+#options-container .circle{
+  padding: 50px;
   background-color: #38c3ce;
-  margin: 0px 116px;
+  height: 250px;
+  width: 250px;
   border-radius: 120px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-#options-container [class*="col-"]:hover{
+#options-container .circle:hover{
   background-color: #38b6c2;
 }
 
@@ -65,6 +66,11 @@ nav{
 #match-resume p{
   width: 100%;
   text-align: center;
+}
+
+#match-resume p{
+  color: #38c3cd;
+  font-size: 1.5em;
 }
 
 /*** modal - result ***/
@@ -141,9 +147,16 @@ nav{
   background-color: #76ff03;
 }
 
+.modal-overlay.active .modal-buttons .continue-game:hover{
+  background-color: #5fca02;
+}
+
 .modal-overlay.active .modal-buttons .end-game{
   background-color: #ff3d00;
 }
 
+.modal-overlay.active .modal-buttons .end-game:hover{
+  background-color: #cc3100;
+}
 
 
