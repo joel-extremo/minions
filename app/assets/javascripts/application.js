@@ -22,6 +22,9 @@ $( document ).ready(function() {
     win : 'YOU WIN!',
     tie : 'TIE!'
   }
+  var gameHistory = []
+  var winCounter = 0
+  var loseCounter = 0
 
   //when the user select paper, rock or scissor
   $('.game-option').click(function(){
@@ -34,13 +37,29 @@ $( document ).ready(function() {
     })
     .done(function( response ) {
 
-      console.log(response)
+      gameHistory.push(response)
 
       loadModalData(response)
     
-      $(`#modal-triggers .result`).trigger('click')
+      $(`#modal-triggers .result`).trigger('click')//open modal
+
+      setTimeout(function() {
+        updateCounters(response.result)
+      }, 2000);
     });  
   })
+
+  //update result labels
+  function updateCounters(result)
+  {
+    if(result == 'win')
+      winCounter++
+    else if(result == 'lose') 
+      loseCounter++
+
+    $('#match-resume .win-counter').text(winCounter)
+    $('#match-resume .lose-counter').text(loseCounter)
+  }
 
   //insert the html in the modal by the result of the game
   function loadModalData(response)
@@ -60,6 +79,7 @@ $( document ).ready(function() {
     $(winner).addClass('winner')
   }
 
+  //return the selector of the winner in the modal
   function getWinner(result) 
   {
     switch (result) 
@@ -70,6 +90,7 @@ $( document ).ready(function() {
     }
   }
 
+  //remove class 'winner' in the modal
   function resetWinner() 
   {
     $('#result-modal .user-option').removeClass('winner')
@@ -77,6 +98,7 @@ $( document ).ready(function() {
   }
 
   //development
+  // updateCounters('tie')
   // loadModalData({user: "paper", minions: "rock", result: 'tie'})
 
   // $('#modal-triggers .result').trigger('click')

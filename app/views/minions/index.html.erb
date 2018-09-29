@@ -1,6 +1,3 @@
-<h1>Minions#index 2</h1>
-<p>Find me in app/views/minions/index.html.erb</p>
-
 <div id="options-container">
   <div class="row">
     <div class="col-sm game-option" data-option="rock">
@@ -15,41 +12,57 @@
   </div>
 </div>
 
-<!-- modals -->
+<div id="match-resume">
+  <div class="row">
+    <div class="col-sm" data-option="rock">
+      <h3>Total win</h3>
+      <span class="win-counter">0</span>
+    </div>
+    <div class="col-sm" data-option="paper">
+      <h3>Total lose</h3>
+      <span class="lose-counter">0</span>
+    </div>
+  </div>
+</div><!-- end match resume -->
+
+<!-- start modals section -->
 
 <div id="modal-triggers">
   <input class="welcome" type="hidden" data-modal="element" data-content="#welcome-modal">
   <input class="result" type="hidden" data-modal="element" data-content="#result-modal">
-</div>
+</div><!-- end modal triggers -->
 
 <div id="welcome-modal" class="modal">
   <h1>Hi, do you want to play with me?</h1>
   <%= image_tag("minions/hi.jpg", class: "img-responsive") %>
-</div>
+</div><!-- end welcome modal -->
 
 <div id="result-modal" class="modal">
   <div class="result">
     <div class="row">
-        <div class="col-sm">
-          <h3>You</h3>
-        </div>
-        <div class="col-sm">
-          <img class="user-option" src="">
-        </div>
-        <div class="col-sm">
-          <img  class="minions-option" src="">
-        </div>
-        <div class="col-sm">
-          <h3>Minions</h3>
-        </div>
+      <div class="col-sm">
+        <h3>You</h3>
       </div>
-  </div>
+      <div class="col-sm">
+        <img class="user-option" src="">
+      </div>
+      <div class="col-sm">
+        <img  class="minions-option" src="">
+      </div>
+      <div class="col-sm">
+        <h3>Minions</h3>
+      </div>
+    </div>
+  </div><!-- end result -->
+
   <div class="message">
     <h1><!-- load by JS --></h1>
     <h2>continue?</h2>
+    <img class="minion" src="">
   </div>
-  <img class="minion img-responsive" src="">
-</div>
+</div><!-- end result modal -->
+
+<!-- end modals section -->
 
 
 
