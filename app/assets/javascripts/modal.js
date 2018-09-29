@@ -139,14 +139,6 @@
             this._buttons.className = "modal-buttons";
             this._wrap.appendChild( this._buttons );
 
-            // if( this._options.onConfirm )
-            // {
-            //     this._confirm = document.createElement( "button" );
-            //     this._confirm.className = "modal-confirm";
-            //     this._confirm.innerHTML = this._options.confirmText;
-            //     this._confirm.addEventListener( "click", this.onConfirm );
-            //     this._buttons.appendChild( this._confirm );
-            // }
             this._dismiss = document.createElement( "button" );
             this._dismiss.className = "continue-game";
             this._dismiss.innerHTML = 'YES';
@@ -156,7 +148,7 @@
             this._dismiss = document.createElement( "button" );
             this._dismiss.className = "end-game";
             this._dismiss.innerHTML = 'NO';
-            this._dismiss.addEventListener( "click", this.onDismiss );
+            this._dismiss.addEventListener( "click", this.redirect );
             this._buttons.appendChild( this._dismiss );
         },
 
@@ -233,6 +225,8 @@
         {
             if( state && typeof state === "string" && this._overlay && this._content )
             {
+                            console.log(state)
+
                 var func = function() {
                     this._content.innerHTML = String( content || "" );
                     this._overlay.classList.remove( "loading" );
@@ -276,6 +270,11 @@
                 this._options.onDismiss.call( this );
             }
             this.removeModal();
+        },
+
+        redirect: function( e )
+        {
+            window.location.href = "https://www.google.com.do";
         },
 
     };

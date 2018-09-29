@@ -93,32 +93,18 @@
 .modal-overlay .modal-wrap .modal-buttons {
   display: block;
   position: absolute;
-  text-align: right;
+  text-align: center;
   width: 100%;
-  left: 0;
   bottom: 0;
   margin: 0;
-  padding: 20px;
+  padding-bottom: 3%;
   opacity: 0;
-  background: linear-gradient(180deg, transparent 0%, #fff 100%);
+  /*background: linear-gradient(180deg, transparent 0%, #fff 100%);*/
   transition: opacity 300ms ease-out 880ms;
   z-index: 3;
 }
 .modal-overlay .modal-wrap .modal-buttons button, .modal-overlay .modal-wrap .modal-buttons a {
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: normal;
-  margin: 0 0 0 10px;
-  padding: 20px;
-  background-color: #fff;
-  color: #333;
-  border: 0;
-  border-radius: 100px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-  transition: background 300ms ease-out;
+  display: none;
 }
 .modal-overlay .modal-wrap .modal-buttons button.modal-confirm, .modal-overlay .modal-wrap .modal-buttons a.modal-confirm {
   background-color: #084;
