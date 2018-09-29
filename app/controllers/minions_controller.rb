@@ -29,6 +29,6 @@ class MinionsController < ApplicationController
       when userOption == 'scissor' && minionsOption == 'paper' then 'win'
       when userOption == 'scissor' && minionsOption == 'rock' then 'lose'
       when userOption == minionsOption then 'tie'
-      end 
+    end 
   end
 end

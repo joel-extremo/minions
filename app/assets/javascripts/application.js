@@ -53,19 +53,19 @@ $( document ).ready(function() {
 
     $('#result-modal h1').text(title)
 
-    $('#result-modal .user-option').attr('src','images/'+response.user+'.png')
+    $('#result-modal .user-option').attr('src','images/'+response.user+'.svg')
 
-    $('#result-modal .minions-option').attr('src','images/'+response.minions+'.png')
+    $('#result-modal .minions-option').attr('src','images/'+response.minions+'.svg')
 
-    $('#result-modal .' + winner).addClass('winner')
+    $(winner).addClass('winner')
   }
 
   function getWinner(result) 
   {
     switch (result) 
     {
-      case 'win': return 'user-option'
-      case 'lose': return 'minions-option'
+      case 'win': return '#result-modal .user-option'
+      case 'lose': return '#result-modal .minions-option'
       default: return ''
     }
   }
@@ -76,7 +76,8 @@ $( document ).ready(function() {
     $('#result-modal .minions-option').removeClass('winner')
   }
 
-  // loadModalData({user: "paper", minions: "rock", result: 'lose'})
+  //development
+  // loadModalData({user: "paper", minions: "rock", result: 'tie'})
 
   // $('#modal-triggers .result').trigger('click')
 });
