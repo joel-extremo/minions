@@ -29,5 +29,8 @@ module Minions
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
   end
 end
