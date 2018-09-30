@@ -28,7 +28,21 @@ $( document ).ready(function() {
   //when the user select paper, rock or scissor
   $(document).on('click', '.game-option', function() {
 
+    let userOption = $(this).data('option')
+
+    $.ajax({
+      url: "/minions/result",
+      data: { userOption }
+    })
+    .done(function( response ) {
+      loadModalData(response)
     
+      $(`#modal-triggers .result`).trigger('click')//open modal
+
+      setTimeout(function() {
+        updateResultCounters(response.result)
+      }, 2000);
+    });  
   })
 
   //update result counter labels in the html 
