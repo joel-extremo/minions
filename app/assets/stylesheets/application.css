@@ -198,6 +198,22 @@ nav{
   height: 600px;
 }
 
+/*** modal - mobil size ***/
+
+@media (max-width: 992px) { 
+  .modal-content .message .minion{
+    display: none;
+  }
+
+  .modal-content .result{
+    display: none;
+  }
+
+  .modal-overlay.active .modal-buttons button{
+    margin-bottom: 50px;
+  }
+}
+
 /*** footer ***/
 
 footer .copyright{
