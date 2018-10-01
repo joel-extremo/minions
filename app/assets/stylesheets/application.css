@@ -73,6 +73,13 @@ nav{
   font-size: 1.5em;
 }
 
+/*** modal - welcome ***/
+
+.modal-content .welcome-container h1{
+  text-align: center;
+  margin-top: 25%;
+}
+
 /*** modal - result ***/
 
 .modal-content .result{
@@ -159,14 +166,13 @@ nav{
   background-color: #cc3100;
 }
 
+/*** about ***/
+
 .about-img{
   height: 600px;
 }
 
-.modal-content .welcome-container h1{
-  text-align: center;
-  margin-top: 25%;
-}
+/*** footer ***/
 
 footer .copyright{
   text-align: center;
