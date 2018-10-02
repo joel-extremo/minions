@@ -204,7 +204,7 @@ nav{
   height: 600px;
 }
 
-/*** modal - mobil size ***/
+/*** modal - mobile size ***/
 
 @media (max-width: 992px) { 
   .modal-content .message .minion{
