@@ -16,3 +16,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # modal
 Rails.application.config.assets.precompile += %w( modal.css )
 Rails.application.config.assets.precompile += %w( modal.js )
+
+Rails.application.config.assets.precompile += %w( bootstrap.min.css )
+
+
